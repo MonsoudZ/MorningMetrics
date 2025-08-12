@@ -1,0 +1,3 @@
+class StripeWebhooksController < ApplicationController
+  skip_after_action :verify_authenticity_token
+end
