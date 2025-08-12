@@ -51,6 +51,16 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  # Tests
+  gem "rspec-rails", "~> 8.0"
+
+  # Factories
+  gem "factory_bot_rails"
+
+  # Linting add-ons (Omakase is already in your Gemfile)
+  gem "rubocop", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rspec", require: false
 end
 
 group :development do
