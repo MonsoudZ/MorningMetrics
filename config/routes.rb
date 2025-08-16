@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+  # config/routes.rb
+  get  "/pricing",           to: "pricing#index"
+
   resource :checkout, only: [] do
-    post :create_session # POST /checkout/create_session
-    get  :success        # GET  /checkout/success
+    post :create_session     # /checkout/create_session
+    get  :success            # /checkout/success
   end
-  resource :billing, only: [:show] do
-    post :portal        # POST /billing/portal
+
+  resource :billing,  only: [:show] do
+    post :portal             # /billing/portal
   end
-  post "/stripe/webhook", to: "stripe_webhooks#receive"
+
+  post "/stripe/webhook",    to: "stripe_webhooks#receive"
 end
